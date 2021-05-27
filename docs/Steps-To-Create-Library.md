@@ -1,14 +1,17 @@
 # Building A Component Library With React
 
-## 1.	Summary
+## 1. Summary
+
 A component library is a collection of logically group components so that one can explore, select components and helps in maintaining consistent design across projects.
 
-## 2.	How to Create a React Library
+## 2. How to Create a React Library
+
 You can create a React Library using the create-react-library (https://github.com/transitive-bullshit/create-react-library) CLI which uses Rollup.js and create-react-app.
 
 [Rollup.js](https://rollupjs.org/guide/en/#overview) is a module bundler for JavaScript which compiles small pieces of code into something larger and more complex, such as a library.
 
 ### Steps:
+
 1.Install globally
 
 This package requires node >= 10.
@@ -37,7 +40,8 @@ npx: installed 150 in 21.621s
 ? Template default
 ```
 
-## 3.	Build and Launch the example site
+## 3. Build and Launch the example site
+
 To get started, in one tab, run:
 
 `$ cd nag-rlib && yarn start`
@@ -48,20 +52,23 @@ And in another command window, run the create-react-app dev server:
 
   <img src='./images/example.png' />
 
-## 3.	Create Github Repo and push the code
-a.	Open command prompt and Fire up the command
+## 4. Create Github Repo and push the code
+
+a. Open command prompt and Fire up the command
 
 `cd nag-rlib`
 
 Use the below Git Commands to set the email and user name of the github
 
 1.Update email and username using:
+
 ```js
 	a.git config user.email "nagvbt@gmail.com"
 	b.git config user.name "nagvbt"
 ```
 
 2.Check if they are updated correctly:
+
 ```js
 	a.git config user.email
 	b.git config user.name
@@ -71,6 +78,7 @@ b. Create a new repository in Github with the same project name say nag-rlib
 
 Create a new repository
 …or push an existing repository from the command line
+
 ```js
 git remote add origin https://github.com/nagvbt/nag-rlib.git
 git branch -M main
@@ -79,3 +87,49 @@ git push -u origin main
 
 Now the code was pushed into the Github - https://github.com/nagvbt/nag-rlib/commit/03e8a144f5afa4edf43b8e47f3dd1facf8d63a6b
 
+## 4. Export Multiple Components
+
+Steps
+
+1. Create Two components
+
+   a. src\ExampleComponent1\ExampleComponent1.jsx
+
+   ```jsx
+   import React from 'react'
+   import styles from '../../styles.module.css'
+
+   function ExampleComponent1({ text }) {
+     return <div className={styles.test}>Example Component 1: {text}</div>
+   }
+
+   export default ExampleComponent1
+   ```
+
+   b. src\ExampleComponent2\ExampleComponent2.jsx
+
+   ```jsx
+   import React from 'react'
+   import styles from '../../styles.module.css'
+
+   function ExampleComponent2({ text }) {
+     return <div className={styles.test}>Example Component 2: {text}</div>
+   }
+
+   export default ExampleComponent2
+   ```
+
+2. Rename src\index.js to src\index.jsx
+
+3. Change the extension of index.js to index.jsx in package.json
+
+   ` "source": "src/index.jsx",`
+
+4. Import the ExampleComponent1 and ExampleComponent2 in index.jsx
+
+```jsx
+import ExampleComponent1 from './components/ExampleComponent1/ExampleComponent1'
+import ExampleComponent2 from './components/ExampleComponent2/ExampleComponent2'
+
+export { ExampleComponent1, ExampleComponent2 }
+```
