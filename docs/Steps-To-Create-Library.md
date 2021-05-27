@@ -54,6 +54,8 @@ And in another command window, run the create-react-app dev server:
 
 ## 4. Create Github Repo and push the code
 
+Steps: Refer Code changes [here](https://github.com/nagvbt/nag-rlib/commit/03e8a144f5afa4edf43b8e47f3dd1facf8d63a6b)
+
 a. Open command prompt and Fire up the command
 
 `cd nag-rlib`
@@ -85,11 +87,15 @@ git branch -M main
 git push -u origin main
 ```
 
-Now the code was pushed into the Github - https://github.com/nagvbt/nag-rlib/commit/03e8a144f5afa4edf43b8e47f3dd1facf8d63a6b
+## 5. Upgrade Pakages
 
-## 4. Export Multiple Components
+To upgrade the Packages to latest by using the command `yarn upgrade --latest`
 
-Steps
+Steps: Refer Code changes [here](https://github.com/nagvbt/nag-rlib/commit/0243b0a59267e9798502abf72705f6d1b02f7768)
+
+## 6. Export Multiple Components
+
+Steps: Refer Code changes [here](https://github.com/nagvbt/nag-rlib/commit/021a6cefe46e436333b0d7fdadb9b30573addf95)
 
 1. Create Two components
 
@@ -125,7 +131,7 @@ Steps
 
    ` "source": "src/index.jsx",`
 
-4. Import the ExampleComponent1 and ExampleComponent2 in index.jsx
+4. Import the ExampleComponent1 and ExampleComponent2 in index.jsx and export them so that the example component can consume the two components
 
 ```jsx
 import ExampleComponent1 from './components/ExampleComponent1/ExampleComponent1'
@@ -133,3 +139,5 @@ import ExampleComponent2 from './components/ExampleComponent2/ExampleComponent2'
 
 export { ExampleComponent1, ExampleComponent2 }
 ```
+
+<img src='./images/multiple-components.png' width="450"/>
