@@ -26,7 +26,10 @@ class Example extends Component {
 ```
 
 ## Documentation
-### 1. [Building A `Component Library` With React](./docs/Steps-To-Create-Library.md)
+
+1. [Building A `Component Library` With React](./docs/Steps-To-Create-Library.md)
+
+3. [References](./docs/References.md)
 
 ## License
 

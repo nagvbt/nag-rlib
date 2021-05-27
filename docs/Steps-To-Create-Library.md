@@ -6,7 +6,7 @@ A component library is a collection of logically group components so that one ca
 ## 2.	How to Create a React Library
 You can create a React Library using the create-react-library (https://github.com/transitive-bullshit/create-react-library) CLI which uses Rollup.js and create-react-app.
 
-Rollup.js is a module bundler for JavaScript which compiles small pieces of code into something larger and more complex, such as a library.
+[Rollup.js](https://rollupjs.org/guide/en/#overview) is a module bundler for JavaScript which compiles small pieces of code into something larger and more complex, such as a library.
 
 ### Steps:
 1.Install globally
@@ -45,6 +45,8 @@ To get started, in one tab, run:
 And in another command window, run the create-react-app dev server:
 
 `$ cd nag-rlib\example && yarn start`
+
+  <img src='./images/example.png' />
 
 ## 3.	Create Github Repo and push the code
 a.	Open command prompt and Fire up the command
