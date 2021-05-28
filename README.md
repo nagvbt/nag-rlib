@@ -33,6 +33,8 @@ class Example extends Component {
 
 3. [References](./docs/References.md)
 
+4. [Coding Standards](./docs/Coding-Standards.md)
+
 ## License
 
 NAG VBT © [nagvbt](https://github.com/nagvbt)
