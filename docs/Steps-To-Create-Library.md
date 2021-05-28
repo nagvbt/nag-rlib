@@ -8,6 +8,7 @@
 - [6. Export Multiple Components](#6-export-multiple-components)
 - [7. Install Storybook](#7-install-storybook)
 - [8. Unit Testing and Code Coverage](#8-unit-testing-and-code-coverage)
+- [9. Eslint](#9-Eslint)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
@@ -212,25 +213,27 @@ user-event tries to simulate the real events that would happen in the browser as
 
 ## 9. Eslint
 
-a. Install airbnb
+[Refer Code](https://github.com/nagvbt/nag-rlib/commit/d3c74d49b9f346a6d15e7d5bfaf1379dee724959)
+
+**a. Install airbnb**
 This package provides Airbnb's .eslintrc as an extensible shared config. [Refer](https://github.com/airbnb/javascript)
 
 `npx install-peerdeps --dev eslint-config-airbnb`
 
-b. Install prop-types
+**b. Install prop-types**
 
 Runtime type checking for React props and similar objects. [Refer](https://github.com/facebook/prop-types)
 
 `yarn add prop-types`
 
-c. Install
+**c. Install eslint-plugin-react-hooks**
 This ESLint plugin enforces the [Rules](https://reactjs.org/docs/hooks-rules.html) of Hooks.
 
-`https://reactjs.org/docs/hooks-rules.html`
+`yarn add --dev eslint-plugin-react-hooks`
 
 Then extend the recommended eslint config:
 
-```
+```jsx
 {
   "extends": [
     // ...
@@ -238,13 +241,13 @@ Then extend the recommended eslint config:
   ]
 }
 ```
-d. Install eslint-plugin-testing-library
+**d. Install eslint-plugin-testing-library**
 ESLint plugin to follow best practices and anticipate common mistakes when writing tests with Testing Library
 [Refer](https://github.com/testing-library/eslint-plugin-testing-library)
 
 `yarn add --dev eslint-plugin-testing-library`
 
-c. Install eslint-plugin-jest-dom
+**e. Install eslint-plugin-jest-dom**
 
 ESLint plugin to follow best practices and anticipate common mistakes when writing tests with jest-dom.
 [Refer](https://github.com/testing-library/eslint-plugin-jest-dom)
@@ -262,7 +265,7 @@ Then extend the recommended eslint config:
 }
 ```
 
-f. Install eslint-config-react-app
+**f. Install eslint-config-react-app**
 This package includes the shareable ESLint configuration used by Create React App.
 
 
