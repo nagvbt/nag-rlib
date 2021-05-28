@@ -13,10 +13,10 @@ Add Storybook:
 ## Addons
 
 1. By Default you will get two Addons
-   a. Essential addons [Reder](https://storybook.js.org/docs/react/essentials/introduction)
+   a. Essential addons [Refer](https://storybook.js.org/docs/react/essentials/introduction)
    b. addon-links
 
-2. Add Aditional addons
+2. Add Aditional addons [Refer Code](https://github.com/nagvbt/nag-rlib/commit/076bb5062ef90720cf6741b2a257ad244865b883)
 
 | S#  | Addon                                                                                | Command                                       | Description                                           |
 | --- | ------------------------------------------------------------------------------------ | --------------------------------------------- | ----------------------------------------------------- |
