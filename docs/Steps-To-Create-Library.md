@@ -9,6 +9,7 @@
 - [7. Install Storybook](#7-install-storybook)
 - [8. Unit Testing and Code Coverage](#8-unit-testing-and-code-coverage)
 - [9. Eslint](#9-Eslint)
+- [10. Publish the Library to npm](#10-publish-the-library-to-npm)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
@@ -118,27 +119,27 @@ Steps: Refer Code changes [here](https://github.com/nagvbt/nag-rlib/commit/021a6
    a. src\ExampleComponent1\ExampleComponent1.jsx
 
    ```jsx
-   import React from 'react'
-   import styles from '../../styles.module.css'
+   import React from 'react';
+   import styles from '../../styles.module.css';
 
    function ExampleComponent1({ text }) {
-     return <div className={styles.test}>Example Component 1: {text}</div>
+     return <div className={styles.test}>Example Component 1: {text}</div>;
    }
 
-   export default ExampleComponent1
+   export default ExampleComponent1;
    ```
 
    b. src\ExampleComponent2\ExampleComponent2.jsx
 
    ```jsx
-   import React from 'react'
-   import styles from '../../styles.module.css'
+   import React from 'react';
+   import styles from '../../styles.module.css';
 
    function ExampleComponent2({ text }) {
-     return <div className={styles.test}>Example Component 2: {text}</div>
+     return <div className={styles.test}>Example Component 2: {text}</div>;
    }
 
-   export default ExampleComponent2
+   export default ExampleComponent2;
    ```
 
 2. Rename src\index.js to src\index.jsx
@@ -150,10 +151,10 @@ Steps: Refer Code changes [here](https://github.com/nagvbt/nag-rlib/commit/021a6
 4. Import the ExampleComponent1 and ExampleComponent2 in index.jsx and export them so that the example component can consume the two components
 
 ```jsx
-import ExampleComponent1 from './components/ExampleComponent1/ExampleComponent1'
-import ExampleComponent2 from './components/ExampleComponent2/ExampleComponent2'
+import ExampleComponent1 from './components/ExampleComponent1/ExampleComponent1';
+import ExampleComponent2 from './components/ExampleComponent2/ExampleComponent2';
 
-export { ExampleComponent1, ExampleComponent2 }
+export { ExampleComponent1, ExampleComponent2 };
 ```
 
 <img src='./images/multiple-components.png' width="450"/>
@@ -210,7 +211,6 @@ user-event tries to simulate the real events that would happen in the browser as
 
 `"test:dev": "react-scripts test --coverage --coverageDirectory='coverage' --env=jsdom --watchAll",`
 
-
 ## 9. Eslint
 
 [Refer Code](https://github.com/nagvbt/nag-rlib/commit/d3c74d49b9f346a6d15e7d5bfaf1379dee724959)
@@ -241,6 +241,7 @@ Then extend the recommended eslint config:
   ]
 }
 ```
+
 **d. Install eslint-plugin-testing-library**
 ESLint plugin to follow best practices and anticipate common mistakes when writing tests with Testing Library
 [Refer](https://github.com/testing-library/eslint-plugin-testing-library)
@@ -268,7 +269,6 @@ Then extend the recommended eslint config:
 **f. Install eslint-config-react-app**
 This package includes the shareable ESLint configuration used by Create React App.
 
-
 `yarn add --dev eslint-config-react-app`
 
 Then extend the recommended eslint config:
@@ -280,3 +280,38 @@ Then extend the recommended eslint config:
     "react-app"
   ]
 }
+```
+
+## 10. Publish the Library to npm
+
+The command used to publish the lib as a public library you need to have a login in https://www.npmjs.com/
+
+`yarn publish --access=public`
+
+Following questions will be asked
+
+```js
+yarn publish v1.22.4
+[1/4] Bumping version...
+info Current version: 1.0.0
+question New version:
+[2/4] Logging in...
+info npm username: nagvbt
+info npm email: nagvbt@gmail.com
+question npm password:
+success Logged in.
+[3/4] Publishing...
+$ run-s build
+yarn run v1.22.4
+$ microbundle-crl --no-compress --format modern,cjs
+Build "nagRlib" to dist:
+        357 B: index.js.gz
+        297 B: index.js.br
+        286 B: index.modern.js.gz
+        234 B: index.modern.js.br
+Done in 3.78s.
+success Published.
+[4/4] Revoking token...
+success Revoked login token.
+Done in 24.67s.
+```
