@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Nag React Library",
   "author": "nagvbt",
-  "license": "NAG VBT",
+  "license": "NAGVBT",
   "repository": "nagvbt/nag-rlib",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
@@ -17,7 +17,8 @@
     "prepare": "run-s build",
     "test": "run-s test:unit test:lint test:build",
     "test:build": "run-s build",
-    "test:lint": "eslint .",
+    "lint": "eslint \"./src/**/*.js\" \"./src/**/*.jsx\" --max-warnings 0 --no-error-on-unmatched-pattern",
+    "lint:fix": "eslint --fix \"./src/**/*.js\" \"./src/**/*.jsx\" --max-warnings 0 --no-error-on-unmatched-pattern",
     "test:dev": "react-scripts test --coverage --coverageDirectory='coverage' --env=jsdom --watchAll",
     "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
@@ -43,16 +44,19 @@
     "@testing-library/user-event": "^13.1.9",
     "babel-eslint": "^10.0.3",
     "cross-env": "^7.0.2",
-    "eslint": "^7.27.0",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb": "18.2.1",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-config-standard": "^16.0.3",
-    "eslint-config-standard-react": "^11.0.1",
-    "eslint-plugin-import": "^2.18.2",
+    "eslint-config-react-app": "^6.0.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-jest-dom": "^3.9.0",
+    "eslint-plugin-jsx-a11y": "6.4.1",
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-promise": "^5.1.0",
-    "eslint-plugin-react": "^7.17.0",
-    "eslint-plugin-standard": "^5.0.0",
+    "eslint-plugin-react": "7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-testing-library": "^4.6.0",
     "gh-pages": "^3.2.0",
     "microbundle-crl": "^0.13.10",
     "npm-run-all": "^4.1.5",
@@ -64,5 +68,7 @@
   "files": [
     "dist"
   ],
-  "dependencies": {}
+  "dependencies": {
+    "prop-types": "^15.7.2"
+  }
 }

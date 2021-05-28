@@ -208,3 +208,72 @@ user-event tries to simulate the real events that would happen in the browser as
 **e. Add below code in package.json under scripts section to run the tests and generate the code coverage.**
 
 `"test:dev": "react-scripts test --coverage --coverageDirectory='coverage' --env=jsdom --watchAll",`
+
+
+## 9. Eslint
+
+a. Install airbnb
+This package provides Airbnb's .eslintrc as an extensible shared config. [Refer](https://github.com/airbnb/javascript)
+
+`npx install-peerdeps --dev eslint-config-airbnb`
+
+b. Install prop-types
+
+Runtime type checking for React props and similar objects. [Refer](https://github.com/facebook/prop-types)
+
+`yarn add prop-types`
+
+c. Install
+This ESLint plugin enforces the [Rules](https://reactjs.org/docs/hooks-rules.html) of Hooks.
+
+`https://reactjs.org/docs/hooks-rules.html`
+
+Then extend the recommended eslint config:
+
+```
+{
+  "extends": [
+    // ...
+    "plugin:react-hooks/recommended"
+  ]
+}
+```
+d. Install eslint-plugin-testing-library
+ESLint plugin to follow best practices and anticipate common mistakes when writing tests with Testing Library
+[Refer](https://github.com/testing-library/eslint-plugin-testing-library)
+
+`yarn add --dev eslint-plugin-testing-library`
+
+c. Install eslint-plugin-jest-dom
+
+ESLint plugin to follow best practices and anticipate common mistakes when writing tests with jest-dom.
+[Refer](https://github.com/testing-library/eslint-plugin-jest-dom)
+
+`yarn add --dev eslint-plugin-jest-dom`
+
+Then extend the recommended eslint config:
+
+```jsx
+{
+  "extends": [
+    // ...
+    "plugin:jest-dom/recommended"
+  ]
+}
+```
+
+f. Install eslint-config-react-app
+This package includes the shareable ESLint configuration used by Create React App.
+
+
+`yarn add --dev eslint-config-react-app`
+
+Then extend the recommended eslint config:
+
+```jsx
+{
+  "extends": [
+    // ...
+    "react-app"
+  ]
+}
