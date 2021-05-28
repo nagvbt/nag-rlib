@@ -1,17 +1,15 @@
 # Building A Component Library With React
 
--
-  * [1. Summary](#1-summary)
-  * [2. How to Create a React Library](#2-how-to-create-a-react-library)
-  * [3. Build and Launch the example site](#3-build-and-launch-the-example-site)
-  * [4. Create Github Repo and push the code](#4-create-github-repo-and-push-the-code)
-  * [5. Upgrade Packages](#5-upgrade-packages)
-  * [6. Export Multiple Components](#6-export-multiple-components)
-  * [7. Install Storybook](#7-install-storybook)
-  * [8. Unit Testing and Code Coverage](#8-unit-testing-and-code-coverage)
+- [1. Summary](#1-summary)
+- [2. How to Create a React Library](#2-how-to-create-a-react-library)
+- [3. Build and Launch the example site](#3-build-and-launch-the-example-site)
+- [4. Create Github Repo and push the code](#4-create-github-repo-and-push-the-code)
+- [5. Upgrade Packages](#5-upgrade-packages)
+- [6. Export Multiple Components](#6-export-multiple-components)
+- [7. Install Storybook](#7-install-storybook)
+- [8. Unit Testing and Code Coverage](#8-unit-testing-and-code-coverage)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
 
 ## 1. Summary
 
@@ -27,7 +25,7 @@ You can create a React Library using the create-react-library (https://github.co
 
 [Rollup.js](https://rollupjs.org/guide/en/#overview) is a module bundler for JavaScript which compiles small pieces of code into something larger and more complex, such as a library.
 
-***Steps:***
+**_Steps:_**
 
 1.Install globally
 
@@ -61,7 +59,7 @@ npx: installed 150 in 21.621s
 
 To get started, in one tab, run:
 
-`$ cd nag-rlib && yarn start`
+`$ cd nag-rlib && yarn build`
 
 And in another command window, run the create-react-app dev server:
 
@@ -159,19 +157,19 @@ export { ExampleComponent1, ExampleComponent2 }
 
 <img src='./images/multiple-components.png' width="450"/>
 
-
 ## 7. Install Storybook
+
 Storybook makes development faster and easier by isolating components with business logic. Install Storybook using below command.
 
 `npx sb init`
 
-***Addons***
+**_Addons_**
 
 Install Addons.
 
 By Default you will get two Addons
-   a. Essential addons [Refer](https://storybook.js.org/docs/react/essentials/introduction)
-   b. addon-links
+a. Essential addons [Refer](https://storybook.js.org/docs/react/essentials/introduction)
+b. addon-links
 
 2. Add Aditional addons [Refer Code](https://github.com/nagvbt/nag-rlib/commit/076bb5062ef90720cf6741b2a257ad244865b883)
 
@@ -181,8 +179,7 @@ By Default you will get two Addons
 | 2   | [storysource](https://github.com/storybookjs/storybook/tree/next/addons/storysource) | yarn add @storybook/addon-storysource --dev   | View the code of your stories within the Storybook UI |
 | 3   | [react-theming](https://github.com/react-theming/storybook-addon)                    | yarn add @react-theming/storybook-addon --dev | Allows to develop themed components in isolation.     |
 
-
-## 8. Unit Testing and Code Coverage
+## 8. Unit Testing and Code Coverage [Refer Code](https://github.com/nagvbt/nag-rlib/commit/5e2778980b9da0a02e43b5e3b69e753f4d35e238)
 
 **a. Add React Testing Library** [Refer](https://github.com/testing-library/react-testing-library)
 
@@ -208,5 +205,6 @@ user-event tries to simulate the real events that would happen in the browser as
 
 `yarn add --dev @testing-library/user-event`
 
-**e. Add below code in package.json under scripts section to run the tests and generate the code coverage
+**e. Add below code in package.json under scripts section to run the tests and generate the code coverage.**
+
 `"test:dev": "react-scripts test --coverage --coverageDirectory='coverage' --env=jsdom --watchAll",`
