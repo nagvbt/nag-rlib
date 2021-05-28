@@ -11,6 +11,21 @@ Add Storybook:
 `npx sb init`
 
 ## Addons
-By Default you will get two Addons
-1. Essential addons [Reder](https://storybook.js.org/docs/react/essentials/introduction)
-2. addon-links
+
+1. By Default you will get two Addons
+   a. Essential addons [Reder](https://storybook.js.org/docs/react/essentials/introduction)
+   b. addon-links
+
+2. Add Aditional addons
+
+| S#  | Addon                                                                                | Command                                       | Description                                           |
+| --- | ------------------------------------------------------------------------------------ | --------------------------------------------- | ----------------------------------------------------- |
+| 1   | [a11y](https://github.com/storybookjs/storybook/tree/next/addons/a11y)               | yarn add @storybook/addon-a11y --dev          | Test components for user accessibility in Storybook   |
+| 2   | [storysource](https://github.com/storybookjs/storybook/tree/next/addons/storysource) | yarn add @storybook/addon-storysource --dev   | View the code of your stories within the Storybook UI |
+| 3   | [react-theming](https://github.com/react-theming/storybook-addon)                    | yarn add @react-theming/storybook-addon --dev | Allows to develop themed components in isolation.     |
+
+## References
+
+1. Storybook [documentation](https://storybook.js.org/docs/react/get-started/introduction)
+
+2. Storybook [tutorials](https://storybook.js.org/tutorials/)
