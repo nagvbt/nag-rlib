@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from '../../styles.module.css';
+import './ExampleComponent1.css';
 
 function ExampleComponent1({ text }) {
-  return <div className={styles.test}>Example Component 1: {text}</div>;
+  return <div className='test'>Example Component 1: {text}</div>;
 }
 
 ExampleComponent1.propTypes = {
