@@ -175,13 +175,14 @@ b. addon-links
 
 2. Add Aditional addons [Refer Code](https://github.com/nagvbt/nag-rlib/commit/076bb5062ef90720cf6741b2a257ad244865b883)
 
-| S#  | Addon                                                                                | Command                                       | Description                                           |
-| --- | ------------------------------------------------------------------------------------ | --------------------------------------------- | ----------------------------------------------------- |
-| 1   | [a11y](https://github.com/storybookjs/storybook/tree/next/addons/a11y)               | yarn add @storybook/addon-a11y --dev          | Test components for user accessibility in Storybook   |
-| 2   | [storysource](https://github.com/storybookjs/storybook/tree/next/addons/storysource) | yarn add @storybook/addon-storysource --dev   | View the code of your stories within the Storybook UI |
-| 3   | [react-theming](https://github.com/react-theming/storybook-addon)                    | yarn add @react-theming/storybook-addon --dev | Allows to develop themed components in isolation.     |
+| S#  | Addon                                                                                | Command                                     | Description                                           |
+| --- | ------------------------------------------------------------------------------------ | ------------------------------------------- | ----------------------------------------------------- |
+| 1   | [a11y](https://github.com/storybookjs/storybook/tree/next/addons/a11y)               | yarn add @storybook/addon-a11y --dev        | Test components for user accessibility in Storybook   |
+| 2   | [storysource](https://github.com/storybookjs/storybook/tree/next/addons/storysource) | yarn add @storybook/addon-storysource --dev | View the code of your stories within the Storybook UI |
 
-## 8. Unit Testing and Code Coverage [Refer Code](https://github.com/nagvbt/nag-rlib/commit/5e2778980b9da0a02e43b5e3b69e753f4d35e238)
+## 8. Unit Testing and Code Coverage
+
+[Refer Code](https://github.com/nagvbt/nag-rlib/commit/5e2778980b9da0a02e43b5e3b69e753f4d35e238)
 
 **a. Add React Testing Library** [Refer](https://github.com/testing-library/react-testing-library)
 
@@ -210,6 +211,12 @@ user-event tries to simulate the real events that would happen in the browser as
 **e. Add below code in package.json under scripts section to run the tests and generate the code coverage.**
 
 `"test:dev": "react-scripts test --coverage --coverageDirectory='coverage' --env=jsdom --watchAll",`
+
+**f. Install jest-fail-on-console** [Refer](https://github.com/ricardo-ch/jest-fail-on-console)
+
+Utility to make jest tests fail when console.error() or console.warn() are used. To install user-event use the below command.
+
+`yarn add --dev jest-fail-on-console`
 
 ## 9. Eslint
 
