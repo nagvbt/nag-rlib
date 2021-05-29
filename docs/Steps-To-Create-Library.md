@@ -29,13 +29,13 @@ You can create a React Library using the create-react-library (https://github.co
 
 **_Steps:_**
 
-1.Install globally
+**1.Install create-react-library globally**
 
 This package requires node >= 10.
 
 `npm install -g create-react-library`
 
-2.Create Library
+**2.Create Library**
 
 Fire up the command prompt and use the below commandcd
 
@@ -55,6 +55,89 @@ npx: installed 150 in 21.621s
 ? License NAG VBT
 ? Package Manager yarn
 ? Template default
+```
+
+3. Install RollupJs and configure
+
+**a. Install Babel Preset**
+
+`yarn add --dev @babel/preset-react`
+
+`yarn add --dev @babel/preset-env`
+
+add `.babelrc` file with below contents
+
+```json
+{
+  "presets": ["@babel/env", "@babel/preset-react"]
+}
+```
+
+**b. Install Rollupjs**
+
+`yarn add --dev rollup`
+
+`yarn add --dev rollup-plugin-delete`
+
+`yarn add --dev rollup-plugin-peer-deps-external`
+
+**c. Install Rollupjs Plugins**
+
+`yarn add rollup-plugin-commonjs`
+
+`yarn add rollup-plugin-node-resolve`
+
+`yarn add @rollup/plugin-json`
+
+`yarn add --dev @rollup/plugin-babel`
+
+`yarn add --dev rollup-plugin-scss`
+
+**c. Add rollup.config.js**
+
+```jsx
+import babel from '@rollup/plugin-babel';
+import external from 'rollup-plugin-peer-deps-external';
+import del from 'rollup-plugin-delete';
+import resolve from 'rollup-plugin-node-resolve';
+import commonjs from 'rollup-plugin-commonjs';
+import json from '@rollup/plugin-json';
+import pkg from './package.json';
+
+const extensions = ['.js', '.jsx'];
+
+export default {
+  input: pkg.source,
+  output: [
+    { file: pkg.main, format: 'cjs' },
+    { file: pkg.module, format: 'esm' }
+  ],
+  plugins: [
+    resolve({
+      extensions,
+      modulesOnly: true
+    }),
+    json({
+      compact: true
+    }),
+    commonjs(),
+    external(),
+    babel({
+      exclude: 'node_modules/**'
+    }),
+    del({ targets: ['dist/*'] })
+  ],
+  external: Object.keys(pkg.peerDependencies || {})
+};
+```
+
+**d. Update the commands**
+
+Add below commands in scripts section of package.json
+
+```json
+"build": "rollup -c",
+"build:dev": "rollup -c -w",
 ```
 
 ## 3. Build and Launch the example site
